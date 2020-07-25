@@ -1,0 +1,7 @@
+ARG DYNAMODB_VERSION=${DYNAMODB_VERSION}
+FROM amazon/dynamodb-local:${DYNAMODB_VERSION}
+
+CMD ["dynamodb"]
+
+EXPOSE 5984
+
