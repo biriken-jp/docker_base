@@ -7,7 +7,7 @@ STAGE=local
 all:
 # Docker
 build:
-	@$(DC) build
+	@$(DC) build --parallel
 up:
 	@$(DC) up -d
 down:
@@ -19,6 +19,8 @@ reload:
 	@$(DC) up -d
 ps:
 	@$(DC) ps
+logs:
+	@$(DC) logs -t -f $(NAME)
 exec:
 	@$(DC) exec $(NAME) bash
 clean:
